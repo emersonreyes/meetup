@@ -1,5 +1,6 @@
 const meetUp = angular.module("meetUp", ["ngRoute"]);
 
+// routing
 meetUp.config(function($routeProvider) {
 	$routeProvider
 	.when("/", {
@@ -16,7 +17,9 @@ meetUp.config(function($routeProvider) {
 	})
 });	
 
-meetUp.controller("mainCtrl", ["$scope", "$route", function($scope, $route) {
-	$scope.page = "home";
-	console.log($scope.page);
+// controller
+meetUp.controller("mainCtrl", ["$scope", function($scope) {
+	$scope.eventName = "";
+	$scope.eventDescription = "";
+	$scope.eventLocation = "";
 }]);
