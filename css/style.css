@@ -1,0 +1,26 @@
+#event-border {
+	border: 2px solid black;
+	margin: 4px 0px 40px 0px;
+}
+
+#content {
+	padding-top: 20px;
+}
+
+#row-margin {
+	margin: 50px;
+}
+
+#tab-padding-date {
+	padding-top: 12px;
+	padding-left: 10px;
+}
+
+#tab-padding-info {
+	padding-top: 12px;
+	padding-right: 10px;
+}
+
+#tab-content-padding {
+	padding-top: 20px;
+}

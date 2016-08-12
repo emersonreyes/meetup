@@ -1,6 +1,5 @@
 const meetUp = angular.module("meetUp", ["ngRoute"]);
 
-// routing
 meetUp.config(function($routeProvider) {
 	$routeProvider
 	.when("/", {
@@ -15,11 +14,37 @@ meetUp.config(function($routeProvider) {
 		templateUrl: "pages/createevent.html",
 		controller: "mainCtrl"
 	})
-});	
+	.when("/datetime", {
+		templateUrl: "pages/datetime.html",
+		controller: "mainCtrl"
+	})
+});
 
-// controller
+meetUp.directive('focus', function($timeout) {
+	return {
+		scope: {
+			trigger: '@focus'
+		},
+		link: function(scope, element) {
+			scope.$watch('trigger', function(value) {
+				if (value === "true") {
+					$timeout(function() {
+						element[0].focus();
+					});
+				}
+			});
+		}
+	};
+}); 
+
 meetUp.controller("mainCtrl", ["$scope", function($scope) {
-	$scope.eventName = "";
-	$scope.eventDescription = "";
-	$scope.eventLocation = "";
+
 }]);
+
+    
+
+
+
+
+
+
