@@ -1,6 +1,14 @@
+@charset "UTF-8";
+
+body {
+	padding: 2em;
+}
+
 #event-border {
-	border: 2px solid black;
+	border: 2px solid #40b5ff;
 	margin: 4px 0px 40px 0px;
+	border-radius: 10px;
+	color: #838b8b;
 }
 
 #content {
@@ -8,7 +16,7 @@
 }
 
 #row-margin {
-	margin: 50px;
+	margin: 20px;
 }
 
 #tab-padding-date {
@@ -24,3 +32,33 @@
 #tab-content-padding {
 	padding-top: 20px;
 }
+
+#previous {
+	text-decoration: none;
+	color: inherit;
+}
+
+.ng-hide-add { 
+	animation:1s slideInLeft fast; 
+}
+
+.ng-hide-remove { 
+	animation:1s slideOutRight ease; 
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInLeft {
+  animation-name: slideInLeft;
+}
+
+

@@ -1,4 +1,4 @@
-const meetUp = angular.module("meetUp", ["ngRoute"]);
+const meetUp = angular.module("meetUp", ["ngRoute", "ngAnimate"]);
 
 meetUp.config(function($routeProvider) {
 	$routeProvider
@@ -20,6 +20,11 @@ meetUp.config(function($routeProvider) {
 	})
 });
 
+// services
+meetUp.service("getStartDate", function() {
+	this.startDate = "";
+});
+
 meetUp.directive('focus', function($timeout) {
 	return {
 		scope: {
@@ -37,11 +42,31 @@ meetUp.directive('focus', function($timeout) {
 	};
 }); 
 
-meetUp.controller("mainCtrl", ["$scope", function($scope) {
+meetUp.controller("mainCtrl", ["$scope", "getStartDate", function($scope, getStartDate) {
+	
+	$scope.eventStartDate = "";
 
+	
+	
+
+	$scope.eventName = "";
+	$scope.eventHost = "";
+	$scope.eventLocation = "";
+
+	$scope.submitForm = function() {
+		console.log($scope.eventName);
+		console.log($scope.eventHost);
+		console.log($scope.eventLocation);
+		console.log($scope.eventStartDate);
+	};
 }]);
 
-    
+
+
+
+
+
+	
 
 
 
