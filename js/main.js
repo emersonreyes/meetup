@@ -21,10 +21,16 @@ meetUp.config(function($routeProvider) {
 });
 
 // services
-meetUp.service("getStartDate", function() {
-	this.startDate = "";
+meetUp.service("getEventInfo", function() {
+	this.eventInfo = {
+		eventName: "",
+		eventHost: "",
+		eventLocation: "",
+		startDateTime: ""	
+	};
 });
 
+// directive for autofocus
 meetUp.directive('focus', function($timeout) {
 	return {
 		scope: {
@@ -42,24 +48,19 @@ meetUp.directive('focus', function($timeout) {
 	};
 }); 
 
-meetUp.controller("mainCtrl", ["$scope", "getStartDate", function($scope, getStartDate) {
-	
-	$scope.eventStartDate = "";
+// controller
+meetUp.controller("mainCtrl", ["$scope", "getEventInfo", function($scope, getEventInfo) {
+	$scope.eventInfo = getEventInfo.eventInfo;
 
-	
-	
+	$scope.$watch("eventInfo", function() {
+		getEventInfo.eventInfo.eventName = $scope.eventInfo.eventName;
+		getEventInfo.eventInfo.eventHost = $scope.eventInfo.eventHost;
+		getEventInfo.eventInfo.eventLocation = $scope.eventInfo.eventLocation;
+		getEventInfo.eventInfo.startDateTime = $scope.eventInfo.eventStartDate;
+	});
 
-	$scope.eventName = "";
-	$scope.eventHost = "";
-	$scope.eventLocation = "";
-
-	$scope.submitForm = function() {
-		console.log($scope.eventName);
-		console.log($scope.eventHost);
-		console.log($scope.eventLocation);
-		console.log($scope.eventStartDate);
-	};
 }]);
+
 
 
 
