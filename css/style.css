@@ -6,7 +6,7 @@ body {
 
 #event-border {
 	border: 2px solid #40b5ff;
-	margin: 4px 0px 40px 0px;
+	margin: 4px 0px 4px 0px;
 	border-radius: 10px;
 	color: #838b8b;
 	background-color: green;
@@ -37,6 +37,14 @@ body {
 #previous {
 	text-decoration: none;
 	color: inherit;
+}
+
+#link-guest {
+	text-decoration: none;
+}
+
+#link-decoration {
+	text-decoration: none;
 }
 
 .ng-hide-add { 

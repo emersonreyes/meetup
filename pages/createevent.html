@@ -1,13 +1,7 @@
-<div class="row" id="row-margin">
-	<div class="col-sm-12" id="event-border">
-		<h3>Event: {{eventInfo.eventName}}</h3>
-		<h4>Who: {{eventInfo.eventHost}}</h4>
-		<h4>Where: {{eventInfo.eventLocation}}</h4>
-		<h4>When: {{eventInfo.eventStartDate | date:'MM/dd/yyyy @ h:mma'}}</h4>
-	</div>
+<div class="row" id="row-margin">	
 	<div>
 		<ul class="nav nav-tabs" role="tablist">
-			<li><p id="tab-padding-info"><a href="#/datetime">Date and Time</a></p></li>
+			<li><p id="tab-padding-info"><a href="#/datetime" id="link-decoration">Date and Time</a></p></li>
 			<li class="active" role="presentation"><a aria-controls="profile" role="tab" data-toggle="tab">Event Info</a></li>
 		</ul>
 		<div class="tab-content" id="tab-content-padding">
@@ -16,13 +10,13 @@
 					<div class="form-group">
 						<label for="inputEventName" class="col-sm-2 control-label">Event Name</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="inputEventName" placeholder="Name of event" focus="true" required ng-model="eventInfo.eventName">
+							<input type="text" class="form-control" id="inputEventName" placeholder="Name of event" focus="true"ng-model="eventInfo.eventName" required>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="inputEventType" class="col-sm-2 control-label">Event Type</label>
 						<div class="col-sm-10">
-							<input  class="form-control" type="text" list="eventType" placeholder="Type of event" id="inputEventType">
+							<input  class="form-control" type="text" list="eventType" placeholder="Type of event" id="inputEventType" ng-model="eventInfo.eventType" required>
 						</div>
 						<datalist id="eventType">
 							<option value="Party"></option>
@@ -34,13 +28,13 @@
 					<div class="form-group">
 						<label for="inputEventHost" class="col-sm-2 control-label">Event Host</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="inputEventHost" placeholder="Who is the host?" ng-model="eventInfo.eventHost">
+							<input type="text" class="form-control" id="inputEventHost" placeholder="Who is the host?" ng-model="eventInfo.eventHost" required>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="inputEventLocation" class="col-sm-2 control-label">Event Location</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="inputEventLocation" placeholder="Location" ng-model="eventInfo.eventLocation">
+							<input type="text" class="form-control" id="inputEventLocation" placeholder="Location" ng-model="eventInfo.eventLocation" required>
 						</div>
 					</div>
 					<div class="form-group">
@@ -52,17 +46,22 @@
 								<div class="btn-group"> 
 									<button type="submit" class="btn btn-primary">Submit</button>
 								</div> 
-								<div>
-									<p><a href="" id="link-guest" ng-click="guestList = true">view guest list</a></p>
-								</div>
+								
 							</div>
 						</div>
 					</div>					
 				</form>
 			<div>
 		</div>
-		
-
+		<div class="col-sm-12" id="event-border">
+			<h3>Event: {{eventInfo.eventName}}</h3>
+			<h4>Event Type: {{eventInfo.eventType}}</h4>
+			<h4>Event Host: {{eventInfo.eventHost}}</h4>
+			<h4>Where: {{eventInfo.eventLocation}}</h4>
+			<h4>Start: {{eventInfo.eventStartDate | date:'MM/dd/yyyy @ h:mma'}}</h4>
+			<h4>End: {{eventInfo.eventEndDate | date:'MM/dd/yyyy @ h:mma'}}</h4>
+		</div>		
+		<p><a href="" id="link-guest" ng-click="guestList = true">view guest list</a></p>						
 		<div class="row slideInLeft col-md-8" ng-show="guestList">
 			<h4>Guest List:</h4>
 			<ul>
@@ -77,6 +76,5 @@
 				<button class="btn btn-warning" ng-click="guestList = false">close</button>
 			</div>
 		</div>
-
 	</div>
 </div>

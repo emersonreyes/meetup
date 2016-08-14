@@ -26,7 +26,9 @@ meetUp.service("getEventInfo", function() {
 		eventName: "",
 		eventHost: "",
 		eventLocation: "",
-		startDateTime: ""	
+		startDateTime: "",
+		endDateTime: "",
+		eventType: ""	
 	};
 });
 
@@ -57,6 +59,8 @@ meetUp.controller("mainCtrl", ["$scope", "getEventInfo", function($scope, getEve
 		getEventInfo.eventInfo.eventHost = $scope.eventInfo.eventHost;
 		getEventInfo.eventInfo.eventLocation = $scope.eventInfo.eventLocation;
 		getEventInfo.eventInfo.startDateTime = $scope.eventInfo.eventStartDate;
+		getEventInfo.eventInfo.endDateTime = $scope.eventInfo.eventEndDate;
+		getEventInfo.eventInfo.eventType = $scope.eventInfo.eventType;
 	});
 
 }]);
