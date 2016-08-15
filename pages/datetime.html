@@ -1,4 +1,12 @@
 <div class="row" id="row-margin">
+	<div class="col-sm-12" id="event-border">
+		<h4>START: {{eventInfo.eventStartDate | date:'MM/dd/yyyy @ h:mma'}}</h4>
+		<h4>END: {{eventInfo.eventEndDate | date:'MM/dd/yyyy @ h:mma'}}</h4>
+		<h4>EVENT: {{eventInfo.eventName}}</h4>
+		<h4>EVENT TYPE: {{eventInfo.eventType}}</h4>
+		<h4>EVENT HOST: {{eventInfo.eventHost}}</h4>
+		<h4>WHERE: {{eventInfo.eventLocation}}</h4>
+	</div>
 	<div class="col-sm-12">
 		<ul class="nav nav-tabs" role="tablist">
 			<li class="active" role="presentation"><a class="link-decoration" aria-controls="profile" role="tab" data-toggle="tab">Date and Time</a></li>

@@ -1,5 +1,13 @@
 <div class="row" id="row-margin">	
 	<div>
+		<div class="col-sm-12" id="event-border">
+			<h4>START: {{eventInfo.eventStartDate | date:'MM/dd/yyyy @ h:mma'}}</h4>
+			<h4>END: {{eventInfo.eventEndDate | date:'MM/dd/yyyy @ h:mma'}}</h4>
+			<h4>EVENT: {{eventInfo.eventName}}</h4>
+			<h4>EVENT TYPE: {{eventInfo.eventType}}</h4>
+			<h4>EVENT HOST: {{eventInfo.eventHost}}</h4>
+			<h4>WHERE: {{eventInfo.eventLocation}}</h4>
+		</div>
 		<ul class="nav nav-tabs" role="tablist">
 			<li><p id="tab-padding-info"><a href="#/datetime" id="link-decoration">Date and Time</a></p></li>
 			<li class="active" role="presentation"><a aria-controls="profile" role="tab" data-toggle="tab">Event Info</a></li>
@@ -46,34 +54,25 @@
 								<div class="btn-group"> 
 									<button type="submit" class="btn btn-primary">Submit</button>
 								</div> 
-								
+								<p><a href="" id="link-guest" ng-click="guestList = true">view guest list</a></p>
 							</div>
 						</div>
 					</div>					
 				</form>
 			<div>
-		</div>
-		<div class="col-sm-12" id="event-border">
-			<h3>Event: {{eventInfo.eventName}}</h3>
-			<h4>Event Type: {{eventInfo.eventType}}</h4>
-			<h4>Event Host: {{eventInfo.eventHost}}</h4>
-			<h4>Where: {{eventInfo.eventLocation}}</h4>
-			<h4>Start: {{eventInfo.eventStartDate | date:'MM/dd/yyyy @ h:mma'}}</h4>
-			<h4>End: {{eventInfo.eventEndDate | date:'MM/dd/yyyy @ h:mma'}}</h4>
-		</div>		
-		<p><a href="" id="link-guest" ng-click="guestList = true">view guest list</a></p>						
-		<div class="row slideInLeft col-md-8" ng-show="guestList">
-			<h4>Guest List:</h4>
-			<ul>
+		</div>				
+		<div class="row col-md-8 slideInLeft" ng-show="guestList">
+			<h5>Guest List:</h5>
+			<ol>
 				<li>Thor</li>
 				<li>Captain America</li>
 				<li>Iron Man</li>
 				<li>Hulk</li>
 				<li>Black Widow</li>
 				<li>Hawkeye</li>
-			</ul>
+			</ol>
 			<div>
-				<button class="btn btn-warning" ng-click="guestList = false">close</button>
+				<button class="btn btn-primary" ng-click="guestList = false">close</button>
 			</div>
 		</div>
 	</div>
