@@ -63,6 +63,30 @@ meetUp.controller("mainCtrl", ["$scope", "getEventInfo", function($scope, getEve
 		getEventInfo.eventInfo.eventType = $scope.eventInfo.eventType;
 	});
 
+
+	$scope.checkPass = function() {
+		// an array of object w/ error messages
+		$scope.errorTypes = [];
+
+		// regex, uppercase letters
+		$scope.upperRegEx = /[A-Z]/g;
+
+		// password need a capital letter
+		if (!$scope.password.match($scope.upperRegEx)) {
+			$scope.errorTypes.push({ type: " Need a capital letter." });
+		}
+		// password needs 6 characters or more
+		if ($scope.password.length < 6) {
+			$scope.errorTypes.push({ type: " Needs a minimum of 6 characters." });	
+		}
+		// if the array is not empty
+		if ($scope.errorTypes.length > 0) {
+			$scope.validationMessage = "Please correct the following error/s. ";
+		}
+		else {
+			$scope.validationMessage = "success!";	
+		}  
+	};
 }]);
 
 
