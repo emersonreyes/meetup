@@ -18,6 +18,10 @@ meetUp.config(function($routeProvider) {
 		templateUrl: "pages/datetime.html",
 		controller: "mainCtrl"
 	})
+	.when("/guestlist", {
+		templateUrl: "pages/guestlist.html",
+		controller: "mainCtrl"
+	})
 });
 
 // services
@@ -80,6 +84,8 @@ meetUp.controller("mainCtrl", ["$scope", "getEventInfo", function($scope, getEve
 			$scope.errorTypes.push({ type: " Needs a minimum of 6 characters." });	
 		}
 		// if the array is not empty
+		// for the validation message, I didn't use "setCustomValidity" bec. it only
+		// works when you double click not single click.
 		if ($scope.errorTypes.length > 0) {
 			$scope.validationMessage = "Please correct the following error/s. ";
 		}

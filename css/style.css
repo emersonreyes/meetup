@@ -1,7 +1,11 @@
 @charset "UTF-8";
 
 body {
-	padding: 2em;
+	padding: 0.5em;
+}
+
+h5 {
+	font-size: 1em;
 }
 
 #event-border {
@@ -10,22 +14,24 @@ body {
 	border-radius: 10px;
 }
 
-#content {
-	padding-top: 20px;
-}
-
 #row-margin {
-	margin: 20px;
+	margin: 2%;
 }
 
 #tab-padding-date {
 	padding-top: 12px;
+	padding-right: 10px;
+}
+
+#tab-padding-guests {
+	padding-top: 12px;
 	padding-left: 10px;
+	padding-right: 10px;
 }
 
 #tab-padding-info {
 	padding-top: 12px;
-	padding-right: 10px;
+	padding-left: 10px;
 }
 
 #tab-content-padding {
@@ -37,37 +43,9 @@ body {
 	color: inherit;
 }
 
-#link-guest {
-	text-decoration: none;
-}
-
 #link-decoration {
 	text-decoration: none;
 }
-
-.ng-hide-add { 
-	animation:1s slideInLeft fast; 
-}
-
-.ng-hide-remove { 
-	animation:1s slideOutRight ease; 
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translate3d(-100%, 0, 0);
-    visibility: visible;
-  }
-
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.slideInLeft {
-  animation-name: slideInLeft;
-}
-
 
 
 
