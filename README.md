@@ -5,6 +5,9 @@
 	<header>
 		<h3>This repo is for my Udacity Senior Web Developer project.</h3>
 	</header>
+	<article>
+		<p>I used yeoman.io for the scaffolding. If you need to download yeoman, please go <a href="http://yeoman.io/codelab/setup.html">here</a> and do steps 1 and 2. Once the download is finished. Run 'yo' on the command line and the Yeoman interactive menu will show up. Please select Fountain Webapp, Angular 1, Webpack NPM, Pure old Javascript, SASS, Just a hello world and Angular UI  </p>
+	</article>
 </section>
 
 
