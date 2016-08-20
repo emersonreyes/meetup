@@ -1,7 +1,14 @@
-@charset "UTF-8";
-
 body {
 	padding: 0.5em;
+}
+
+#jumbotron-padding {
+	padding-left: 20px;
+}
+
+#error-types {
+	color: red;
+	text-decoration: none;
 }
 
 h5 {
@@ -9,7 +16,7 @@ h5 {
 }
 
 #event-border {
-	border: 2px solid #cccccc;
+	border: 10px solid #cccccc;
 	margin: 4px 0px 10px 0px;
 	border-radius: 10px;
 }
@@ -46,6 +53,3 @@ h5 {
 #link-decoration {
 	text-decoration: none;
 }
-
-
-
